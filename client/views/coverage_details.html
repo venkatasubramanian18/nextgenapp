@@ -1,0 +1,236 @@
+ 
+<div class="personal-container" ng-controller="nextPageCtrl5">
+   <form name="covForm" class="insuredForm" > 
+     <div class="col-sm-2">
+    </div>  
+    <div class="col-sm-8">
+      <h1><strong>Coverage Screen</strong></h1> 
+      <ul class="nav nav-tabs nav-pills nav-justified" ng-init="tab = 1">
+        <li ng-class="{active:tab===1}"><a href ng-click="tab = 1">Basic</a></li>
+        <li ng-class="{active:tab===2}"><a href ng-click="tab = 2">Standard</a></li>
+        <li ng-class="{active:tab===3}"><a href ng-click="tab = 3">Extended</a></li>
+      </ul>
+      <h3>
+      <div ng-show="tab === 1" ng-controller="bslctoptCntrl">        
+            <div>  
+            <p>
+              <center>
+              <div class="col-sm-12">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Total Permium ${{coverage.premium | number:2}}</h3>
+                    </div>
+                  </div>
+              </div>
+              </center>
+            </p>
+            <p class="col-sm-12">
+              <label>Bodily Injury Liability (BI)/Property Damage Liability (PD)*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.bipd"     
+                                ng-options="a.val as a.cov for a in bipdval" ng-change="changedCovValue()">
+                        </select>  
+                    </div>
+            </p>
+             <p class="col-sm-12">
+              <label>Personal Injury Protection*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.pip"     
+                                ng-options="a.val as a.cov for a in pipval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Uninsured Motorists Bodily Injury*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.umbi"     
+                                ng-options="a.val as a.cov for a in umbival" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Comprehensive*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.comp"     
+                                ng-options="a.val as a.cov for a in compval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Collision*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.coll"     
+                                ng-options="a.val as a.cov for a in collval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            </div>
+            <p class="clearfix"> 
+              <center>
+                <p class="col-sm-6">
+                <button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="goBackToVehDetail()">Back</button>
+                </p>
+                <p class="col-sm-6">
+                <button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="goToSummary()">Issue</button>
+                </p>
+              </center>
+            </p>
+      </div>
+      <div ng-show="tab === 2" ng-controller="sslctoptCntrl">
+          <div>    
+           <p>
+              <center>
+              <div class="col-sm-12">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Total Permium ${{coverage.premium | number:2}}</h3>
+                    </div>
+                  </div>
+              </div>
+              </center>
+            </p>
+           <p class="col-sm-12">
+              <label>Bodily Injury Liability (BI)/Property Damage Liability (PD)*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.bipd"     
+                                ng-options="a.val as a.cov for a in bipdval" ng-change="changedCovValue()">
+                        </select>  
+                    </div>
+            </p>
+             <p class="col-sm-12" >
+              <label>Personal Injury Protection*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.pip"     
+                                ng-options="a.val as a.cov for a in pipval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Uninsured Motorists Bodily Injury*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.umbi"     
+                                ng-options="a.val as a.cov for a in umbival" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Comprehensive*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.comp"     
+                                ng-options="a.val as a.cov for a in compval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Collision*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.coll"     
+                                ng-options="a.val as a.cov for a in collval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+           
+          </div>
+            <p class="clearfix"> 
+              <center>
+                <p class="col-sm-6">
+                <button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="goBackToVehDetail()">Back</button>
+                </p>
+                <p class="col-sm-6">
+                <button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="goToSummary()">Issue</button>
+                </p>
+              </center>
+            </p>
+      </div>
+      <div ng-show="tab === 3"  ng-controller="eslctoptCntrl">
+          <div>    
+           <p>
+              <center>
+              <div class="col-sm-12">
+                  <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Total Permium ${{coverage.premium | number:2}}</h3>
+                    </div>
+                  </div>
+              </div>
+              </center>
+            </p>
+           <p class="col-sm-12">
+              <label>Bodily Injury Liability (BI)/Property Damage Liability (PD)*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.bipd"     
+                                ng-options="a.val as a.cov for a in bipdval" ng-change="changedCovValue()">
+                        </select>  
+                    </div>
+            </p>
+             <p class="col-sm-12">
+              <label>Personal Injury Protection*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.pip"     
+                                ng-options="a.val as a.cov for a in pipval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Uninsured Motorists Bodily Injury*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.umbi"     
+                                ng-options="a.val as a.cov for a in umbival" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Comprehensive*</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.comp"     
+                                ng-options="a.val as a.cov for a in compval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Collision*</label>
+                    <div class="col-sm-12" >
+                        <select ng-model="coverage.coll"     
+                                ng-options="a.val as a.cov for a in collval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Medical Payments</label>
+                    <div class="col-sm-12">
+                        <select ng-model="coverage.mp"     
+                                ng-options="a.val as a.cov for a in mpval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            <p class="col-sm-12">
+              <label>Towing and Labour</label>
+                    <div class="col-sm-12" >
+                        <select ng-model="coverage.tl"     
+                                ng-options="a.val as a.cov for a in tlval" ng-change="changedCovValue()">
+                        </select> 
+                    </div>
+            </p>
+            
+            
+
+          </div>
+
+
+            <p class="clearfix"> 
+              <center>
+                <p class="col-sm-6">
+                <button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="goBackToVehDetail()">Back</button>
+                </p>
+                <p class="col-sm-6">
+                <button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="goToSummary()">Issue</button>
+                </p>
+              </center>
+            </p>
+      </div>
+      </h3>
+             </div>  
+       <div class="col-sm-2">
+       </div>  
+  </form>
+</div>

@@ -1,0 +1,38 @@
+
+
+<form name="zipForm" >
+
+
+<section class="section-full" ng-controller="zipcodeCtrl">	
+    <div class="table-cell">
+        <h1 class="h1-display" style="color: #dd4d1c;">NextGen Insurance</h1> 
+        <div>			
+            <div class="row">
+                <div class="col-sm-12">	
+                    <h1 class="h1-display"><span style="font-weight: normal;">Get a Car</span><br>INSURANCE QUOTE</h1>                  
+                    <form class="getquote-form">                      
+                        <div ng-class="{ 'has-error' : zipForm.zipCode.$invalid && !zipForm.zipCode.$pristine }">
+                            <input type="number" name="zipCode" class="form-control" placeholder="Enter 5 digit Zip Code" style="font-style:italic" ng-model="user.zipCode" ng-pattern="/^(\d{5}-\d{4}|\d{5})$/" required>
+							 <div role="alert">
+								<span class="error" ng-show="zipForm.zipCode.$error.required && !zipForm.zipCode.$pristine">
+								  Zip Code is Required!</span>
+							 </div>
+							  <div role="alert">
+								<span class="error" ng-show="zipForm.zipCode.$error.pattern">
+								  Please Enter Valid 5 Digit Zip Code!</span>
+							 </div>
+
+							</br>
+							<div ng-controller="nextPageCtrl">
+                                <span>
+                                <button type="submit" class="btn btn-warning btn-block btn-lg" ng-click="zipForm.$valid && goToPersonalDetail()"><span style="font-weight: bold;">Get a Quote</span></button>
+                                </span>
+							</div>
+                        </div>
+                    </form>                  
+                </div>
+            </div>			
+        </div>
+    </div>	
+</section>  
+</form>

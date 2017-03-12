@@ -1,0 +1,73 @@
+
+  <div class="personal-container">
+    <form name=summForm class="insuredForm" ng-controller="summPageCtrl"> 
+    <div class="col-sm-2">
+    </div>  
+    <div class="col-sm-8">
+    <h1><strong>Thank You For Taking Insurance With Us!</strong></h1>
+        <center>
+
+      	<div id="summForm" >
+        <div class="row">
+      	<p class="col-sm-12">
+          <div class="alert alert-warning" role="alert">
+                <h2>Next Gen Insurance Policy Details</h2>
+                Thank you for taking policy with us! Please find your details below,
+          </div>
+        </p>    
+        <div class="col-sm-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">UUID</h3>
+            </div>
+            <div class="panel-body">
+              {{uuid}}
+            </div>
+          </div>
+        </div>
+        <!-- -->
+        <div class="col-sm-6">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Insured Name</h3>
+            </div>
+            <div class="panel-body">
+              {{insuredname}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Coverage Type</h3>
+            </div>
+            <div class="panel-body">
+              {{covtype}}
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div class="col-sm-6">
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Total Premium</h3>
+            </div>
+            <div class="panel-body">
+              ${{premium | number:2}}
+            </div>
+          </div>
+        </div>
+      </div>
+      	</div>
+        <p class="clearfix"> 
+          <center>
+          <button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="generatePDF()">Download PDF</button>
+          </center>
+        </p>
+        </center>
+                  </div>  
+          <div class="col-sm-2">
+          </div>  
+    </form>    
+  </div>  
+

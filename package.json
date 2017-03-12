@@ -1,0 +1,22 @@
+{
+  "name": "NextGenQuote",
+  "version": "1.0.0",
+  "description": "NextGenQuote",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular-uuid": "0.0.4",
+    "body-parser": "*",
+    "express": "*",
+    "mongoose": "*",
+    "node-uuid": "^1.4.7"
+  },
+  "engines" : {
+    "node": "6.6.0",
+    "npm": "3.10.3"
+  },
+  "author": "Venkat",
+  "license": "ISC"
+}

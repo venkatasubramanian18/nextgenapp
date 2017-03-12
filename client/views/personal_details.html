@@ -1,0 +1,99 @@
+
+ <div class="personal-container"  ng-controller="nextPageCtrl2">
+
+
+				<form  name="insForm" class="insuredForm">
+					<div class="col-sm-2">
+					</div>	
+					<div class="col-sm-8">
+					<h1><strong>Insured Screen</strong></h1>	
+					<div ng-class="{ 'has-error' : insForm.firstText.$invalid && !insForm.firstText.$pristine }">
+					<p class="col-sm-4">
+						<label>First Name*<span class="error" role="alert" ng-show="insForm.firstText.$invalid && !insForm.firstText.$pristine ">Enter First Name!</span></label>
+						<input type="text" name="firstText" class="form-control" placeholder="First Name" ng-model="personal.firstText" ng-required="true">
+						
+					</p>
+					</div>
+					
+					<p class="col-sm-2">
+						<label>Middle Initial</label>
+						<input type="text" name="mi" placeholder="MI" ng-model="personal.mi" >
+					</p>
+					<div ng-class="{ 'has-error' : insForm.lastText.$invalid && !insForm.lastText.$pristine }">
+					<p class="col-sm-4">
+						<label>Last Name*<span class="error" ng-show="insForm.lastText.$invalid && !insForm.lastText.$pristine "> Enter Last Name!</span></label>
+						<input type="text" name="lastText" placeholder="Last Name" ng-model="personal.lastText" class="form-control"  ng-required="true">
+					</p>
+					</div>
+					<p class="col-sm-2">
+						<label>Suffix*</label><span class="error" ng-show="insForm.suffix.$dirty && insForm.suffix.$invalid">Select Field</span>
+						<select ng-model="personal.suffix" required>
+						  <option value="" disabled>Select Suffix</option>
+						  <option value="Mr">Mr</option>
+						  <option value="Mrs">Mrs</option>
+						</select>
+					</p>
+					
+					<div ng-class="{ 'has-error' : insForm.address.$invalid && !insForm.address.$pristine }">
+					<p class="col-sm-8">
+						<label>Address*<span class="error" ng-show="insForm.address.$invalid && !insForm.address.$pristine "> Enter Address!</span></label>
+						<input  type="text" name="address" placeholder="Address" ng-model="personal.address" class="form-control" ng-minlength="2" ng-required="true">
+						
+					</p>
+					</div>
+					<div ng-class="{ 'has-error' : insForm.aptunit.$invalid && !insForm.aptunit.$pristine }">
+					<p class="col-sm-4">
+						<label>Apt/Unit #<span class="error" ng-show="insForm.aptunit.$invalid && !insForm.aptunit.$pristine "> Invalid Apt/Unit#!</span></label>
+						<input type="number" name="aptunit" placeholder="2 digit Apt/Unit #" ng-model="personal.aptunit" class="form-control" ng-minlength="2" ng-maxlength="2" ng-required="true">
+					</p>
+					</div>
+					
+					<p class="col-sm-4">
+						<label>City</label>
+						<input type="text" name="city" placeholder="City" ng-model="personal.city" disabled>
+						
+					</p>
+					<p class="col-sm-4">
+						<label>State</label>
+						<input type="text" name="state" placeholder="State" ng-model="personal.state" disabled>
+					</p>
+					<p class="col-sm-4">
+						<label>Zip</label>
+						<input type="text" name="zip" placeholder="Zip Code" ng-model="personal.zip" disabled>
+					</p>
+					
+					
+					<div ng-class="{ 'has-error' : insForm.dob.$invalid && !insForm.dob.$pristine }">
+					<p class="col-sm-3">
+						<label>Date of Birth*<span class="error" ng-show="insForm.dob.$error.date"> Invalid DOB!</span></label>
+						<input type="date" name="dob" ng-model="personal.dob" placeholder="MM/DD/YYYY" class="form-control" ng-required="true">
+						
+					</p>
+					</div>
+					
+					<div ng-class="{ 'has-error' : insForm.email.$invalid && !insForm.email.$pristine }">
+					<p class="col-sm-6">
+						<label>Email Address*<span class="error" ng-show="insForm.email.$invalid && !insForm.email.$pristine "> Invalid Email!</span></label>
+						<input type="email" name="email" placeholder="Email Address" ng-model="personal.email" class="form-control" ng-required="true">
+					</p>
+					</div>
+					
+					<div ng-class="{ 'has-error' : insForm.phone.$invalid && !insForm.phone.$pristine }">
+					<p class="col-sm-3">
+						<label>Primary Phone #*<span class="error" ng-show="insForm.phone.$invalid && !insForm.phone.$pristine "> Invalid!</span></label>
+						<input type="number" name="phone" ng-model="personal.phone" placeholder="Enter 10 Digit #" ng-minlength="10" ng-maxlength="10" class="form-control" ng-required="true">
+					</p>
+					</div>
+
+					    <center>
+						<div class="col-sm-12">
+                                <span>
+                                <button type="submit" class="btn btn-warning btn-block btn-lg" ng-click="insForm.$valid && goToDriverDetail()">Continue</button>
+                                </span>
+						</div>
+						</center>
+					</div>	
+					<div class="col-sm-2">
+					</div>	
+				</form>​​				
+  </div>

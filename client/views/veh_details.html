@@ -1,0 +1,155 @@
+
+  <div class="personal-container">
+
+    <form name=vehForm class="insuredForm" ng-controller="nextPageCtrl4"> 
+          <div class="col-sm-2">
+    </div>  
+    <div class="col-sm-8">
+    <h1><strong>Vehicle Screen</strong></h1> 
+	<div ng-class="{ 'has-error' : vehForm.year.$invalid && !vehForm.year.$pristine }">
+	<p class="col-sm-4">
+      		<label>Year*<span class="error" ng-show="vehForm.year.$invalid && !vehForm.year.$pristine "> Select Year!</span></label>
+      		<select ng-model="vehicle.year" name='year' required>
+	      	<option value="" disabled>Select Year</option>
+		      <option value="1990">1990</option>
+	      	<option value="1991">1991</option>
+	        <option value="1992">1992</option>
+		      <option value="1993">1993</option>
+	        <option value="1994">1994</option>
+	        <option value="1995">1995</option>
+	        <option value="1996">1996</option>
+	        <option value="1997">1997</option>
+	        <option value="1998">1998</option>
+	        <option value="1999">1999</option>
+	        <option value="2000">2000</option> 
+	        <option value="2001">2001</option> 
+	        <option value="2002">2002</option> 
+	        <option value="2003">2003</option> 
+	        <option value="2004">2004</option> 
+	        <option value="2005">2005</option> 
+	        <option value="2006">2006</option> 
+	        <option value="2007">2007</option>     
+	        <option value="2008">2008</option> 
+	        <option value="2009">2009</option> 
+	        <option value="2010">2010</option> 
+	        <option value="2011">2011</option> 
+	        <option value="2012">2012</option> 
+	        <option value="2013">2013</option> 
+	        <option value="2014">2014</option> 
+		      <option value="2015">2015</option>
+	        <option value="2016">2016</option> 
+      		</select>
+	</p>
+	</div>
+
+	<div ng-class="{ 'has-error' : vehForm.make.$invalid && !vehForm.make.$pristine }">
+     	<p class="col-sm-4">
+      		<label>Make*<span class="error" ng-show="vehForm.make.$invalid && !vehForm.make.$pristine "> Enter Vehicle Make!</span></label>
+      		<input type="text" name="make" placeholder="Eg. Ford" ng-model="vehicle.make" class="form-control" ng-required="true">
+     	</p>
+	</div>
+	
+	<div ng-class="{ 'has-error' : vehForm.model.$invalid && !vehForm.model.$pristine }">
+     	<p class="col-sm-4">
+      		<label>Model*<span class="error" ng-show="vehForm.model.$invalid && !vehForm.model.$pristine "> Enter Model!</span></label>
+      		<input type="text" name="model" placeholder="Eg. C-Max Hybrid" ng-model="vehicle.model" class="form-control" ng-required="true">
+     	</p>
+	</div>
+
+	<div ng-class="{ 'has-error' : vehForm.series.$invalid && !vehForm.series.$pristine }">
+     	<p class="col-sm-12">
+      		<label>Series*<span class="error" ng-show="vehForm.series.$invalid && !vehForm.series.$pristine "> Select Series!</span></label>
+      		<select ng-model="vehicle.series" name='series' required>
+            <option value="" disabled>Select Series</option>
+        		<option value="1">S_1</option>
+        		<option value="2">S_2</option>
+        		<option value="3">S_3</option>
+        		<option value="4">S_4</option>
+        		<option value="5">S_5</option>
+      		</select>
+     	</p>
+	</div>
+
+     	<div ng-class="{ 'has-error' : vehForm.custom.$invalid && !vehForm.custom.$pristine }">
+	<p class="col-sm-12">
+       		<label>Has the vehicle been customized?*<span class="error" ng-show="vehForm.custom.$invalid && !vehForm.custom.$pristine "> Select Yes or No!</span></label>
+      		<select ng-model="vehicle.custom" name='custom' required>
+          <option value="" disabled>Select Yes/No</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+      		</select>
+ 	</p>
+	</div>
+   
+	<div ng-class="{ 'has-error' : vehForm.primary.$invalid && !vehForm.primary.$pristine }">
+     	<p class="col-sm-12">
+      		<label>What is the primary use of this vehicle?*<span class="error" ng-show="vehForm.primary.$invalid && !vehForm.primary.$pristine "> Select Vehicle use!</span></label>
+      		<select ng-model="vehicle.primary" name='primary' required>
+            <option value="" disabled>Select Vehicle Use</option>
+        		<option value="school">For School</option>
+        		<option value="work">For Work</option>
+        		<option value="goods">For Goods</option>
+      		</select>
+ 	</p>
+	</div>         
+   
+	<div ng-class="{ 'has-error' : vehForm.loan.$invalid && !vehForm.loan.$pristine }">
+     	<p class="col-sm-12">
+      		<label>Do you have a loan for this vehicle?*<span class="error" ng-show="vehForm.loan.$invalid && !vehForm.loan.$pristine "> Select Yes or No!</span></label>
+      		<select ng-model="vehicle.loan" name='loan' required>
+            <option value="" disabled>Select Yes/No</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+      		</select>
+ 	</p>
+	</div>
+
+	<div>
+     	<p class="col-sm-12">
+       		<label>Please indicate if any of the following anti-theft devices are installed on your vehicle(check all that apply)</label>
+		<action>
+     			<input type="checkbox" name='device' ng-model="vehicle.device.Alarm" value="Alarm"><span style="color: white">Alarm Only</span><br>
+     			<input type="checkbox" name='device' ng-model="vehicle.device.Active_Device" value="Active_Device"><span style="color: white">Active Disabling device</span><br>
+     			<input type="checkbox" name='device' ng-model="vehicle.device.Passive_Device" value="Passive_Device"><span style="color: white">Passive Disabling device</span><br>
+     			<input type="checkbox" name='device' ng-model="vehicle.device.Glass_Etched_with_Vin" value="Glass_Etched_with_Vin"><span style="color: white">Glass Etched with Vin</span><br>
+     			<input type="checkbox" name='device' ng-model="vehicle.device.Veh_Recovery" value="Veh_Recovery"><span style="color: white">Vehicle Recovery System</span><br>
+	 	</action>   
+     	</p>
+	</div>
+
+	<div ng-class="{ 'has-error' : vehForm.park.$invalid && !vehForm.park.$pristine }">
+     	<p class="col-sm-12">
+       		<label>Do you usually park your vehicle at Insured address?*<span class="error" ng-show="vehForm.park.$invalid && !vehForm.park.$pristine "> Select Yes or No!</span></label>
+  
+      		<select ng-model="vehicle.park" name='park' ng-change="changedValue()" required>
+            <option value="" disabled>Select Yes/No</option>
+        		<option value="yes">Yes</option>
+        		<option value="no">No</option>
+      		</select>
+ 	</p>
+	</div>
+
+	<div ng-class="{ 'has-error' : vehForm.address.$invalid && !vehForm.address.$pristine }">
+	<p class="col-sm-12">
+		<label>Address*<span class="error" ng-show="vehForm.address.$invalid && !vehForm.address.$pristine "> Enter Address!</span></label>
+		<input type="text" name="address" placeholder="Address" ng-model="vehicle.address" ng-disabled="!vehicle.park" class="form-control" ng-required="true">
+	</p>
+	</div>
+
+      	<p class="clearfix"> 
+      		<center>
+            <p class="col-sm-6">
+      			<button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="goBackToDrvDetail()">Back</button>
+            </p>
+            <p class="col-sm-6">
+      			<button type="submit" class="btn btn-warning btn-lg  btn-block" ng-click="vehForm.$valid && goToCovDetail()">Continue</button>
+            </p>
+      		</center>
+      	</p>
+                   </div>  
+       <div class="col-sm-2">
+       </div>  
+    </form>    
+
+  </div>  
+
